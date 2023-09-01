@@ -14,4 +14,9 @@ Scaffold-DbContext "Server=.\SQLEXPRESS;Database=OriginSolutions;Trusted_Connect
 * entrar al repositorio y realizar por comando un npm install dentro del directorio de angular
 
 # Registros cargados segun tabla
-
+* Tarjeta valida
+    Numero: 1111-2222-3333-4444
+    Pin: 4321
+* Tarjeta invalida (bloqueada)
+    Numero: 1234-1234-1234-1234
+    Pin: 1234
