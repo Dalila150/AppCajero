@@ -1,0 +1,65 @@
+<div *ngIf="!showReportWithdrawal" class="general-container">
+    <h1>Ingrese el dinero a retirar</h1>
+    <div class="money-container">
+        <p>$</p>
+        <input type="number" disabled [ngModel]="formatPinNumber()" [ngModelOptions]="{ updateOn: 'change' }"
+        maxlength="16" />
+    </div>
+    <div class="keyboard-card">
+        <div class="row-keyboard">
+            <button class="key" (click)="keyboardPress(1)">
+                <p>1</p>
+            </button>
+            <button class="key" (click)="keyboardPress(2)">
+                <p>2</p>
+            </button>
+            <button class="key" (click)="keyboardPress(3)">
+                <p>3</p>
+            </button>
+        </div>
+        <div class="row-keyboard">
+            <button class="key" (click)="keyboardPress(4)">
+                <p>4</p>
+            </button>
+            <button class="key" (click)="keyboardPress(5)">
+                <p>5</p>
+            </button>
+            <button class="key" (click)="keyboardPress(6)">
+                <p>6</p>
+            </button>
+        </div>
+        <div class="row-keyboard">
+            <button class="key" (click)="keyboardPress(7)">
+                <p>7</p>
+            </button>
+            <button class="key" (click)="keyboardPress(8)">
+                <p>8</p>
+            </button>
+            <button class="key" (click)="keyboardPress(9)">
+                <p>9</p>
+            </button>
+        </div>
+        <div>
+            <button class="key" (click)="keyboardPress(0)">
+                <p>0</p>
+            </button>
+        </div>
+    </div>
+    <div class="buttons-container">
+        <button (click)="sentMoneyToWithdrawal()">
+            Aceptar
+        </button>
+        <button (click)="cleanKeayboard()">
+            Limpiar
+        </button>
+        <button routerLink="/">
+            Salir
+        </button>
+    </div>
+    <div>
+        <p class="error-message" *ngIf="errorMessageFlag">El dinero no puede ser 0 ni superar el millon, ingrese otro monto</p>
+    </div>
+</div>
+<div *ngIf="showReportWithdrawal">
+    <app-operations-reports-page [isBalanceOperation]="false" [isDepositOperation]="showReportWithdrawal" [cardNumber]="cardNumber" [date]="date" [balance]="balance" [withdrawalNumber]="withdrawalNumber"></app-operations-reports-page>
+</div>

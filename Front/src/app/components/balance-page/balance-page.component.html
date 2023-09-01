@@ -1,0 +1,24 @@
+<div *ngIf="!showReportBalance" class="general-container" >
+    <h1>Datos de mi Tarjeta</h1>
+    <div class="balance-container">
+        <div class="data-container">
+            <h2>Numero de tarjeta: </h2>
+            <h3>{{cardNumber}}</h3>
+        </div>
+        <div class="data-container">
+            <h2>Fecha de Consulta: </h2>
+            <h3>{{date}}</h3>
+        </div>
+        <div class="data-container">
+            <h2>Balance de cuenta: </h2>
+            <h3>${{balanceAccount}}</h3>
+        </div>
+    </div>
+    <div class="button-container">
+        <button (click)="toggleReportBalance()">Atras</button>
+        <button routerLink="/">Salir</button>
+    </div>
+</div>
+<div *ngIf="showReportBalance">
+    <app-operations-reports-page [isBalanceOperation]="showReportBalance" [isDepositOperation]="false" [cardNumber]="cardNumber" [date]="date" [balance]="balanceAccount"></app-operations-reports-page>
+</div>

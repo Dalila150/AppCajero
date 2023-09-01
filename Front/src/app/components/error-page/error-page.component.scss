@@ -1,0 +1,30 @@
+.general-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(160, 0, 0);
+    height: 100vh;
+}
+
+h1{
+    font-size: 15rem;
+    color: white;
+}
+h2{
+    font-size: 2rem;
+    color: white;
+}
+
+button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(160, 0, 0);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}

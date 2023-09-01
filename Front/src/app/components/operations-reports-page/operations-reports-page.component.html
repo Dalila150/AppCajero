@@ -1,0 +1,24 @@
+<div class="general-container">
+    <h1>Número de tarjeta: {{formatcardNumber()}} </h1>
+    <h2>Fecha: {{date}}</h2>
+    <div *ngIf="isBalanceOperation && !isDepositOperation">
+        <h2>Operación realizada: Consulta de balance de cuenta</h2>
+        <div>
+            <p>Balance: ${{balance}}</p>
+        </div>
+    </div>
+    <div *ngIf="!isBalanceOperation && isDepositOperation">
+        <h2>Operación realizada: Retiro de efectivo de cuenta</h2>
+        <div>
+            <p>Dinero retirado: ${{withdrawalNumber}}</p>
+        </div>
+        <div>
+            <p>Balance: ${{balance}}</p>
+        </div>
+    </div>
+    <div>
+        <button routerLink="/operaciones">Atras</button>
+        <button routerLink="/">Salir</button>
+    </div>
+
+</div>
